@@ -7,6 +7,7 @@ PyBank_csv = os.path.join("Resources", "budget_data.csv")
 
 dates = []
 prof_loss = []
+changes = []
 
 
 #PyBank: analyze records to calculate the following: 
@@ -47,19 +48,30 @@ with open(PyBank_csv, newline = '') as PyBank_csvfile:
         #month_year = str(row[0])
         dates.append(row[0]) 
         prof_loss.append(int(row[1]))
-        
-        length = len(prof_loss)
-        total = sum(prof_loss)
-        average_change = total/length 
+    
+    previous = 0
+    for num in prof_loss:
+        #calculating the change variable
+        change = num - previous
+        changes.append(change)
+        #previous = changes
+        previous = num
+        #print(change)
+        #print(num)
+        #print(previous)
+changes.pop(0) 
+average_change = sum(changes)/int(len(changes))
+#print(changes.index(max(changes)))
+#print(changes.index(min(changes)))
 
-
-        
-print(prof_loss)
 print("Financial Analysis") 
 print("-----------------------------------------")
 print(f"Total Months: {len(dates)}")
 print(f"Total: ${str(sum(prof_loss))}") 
 print(f"Average Change: ${str(average_change)}")
+print(f"Greatest Increase in Profits: {dates[24]} (${str(max(changes))})")
+print(f"Greatest Decrease in Profits: {dates[43]} (${str(min(changes))})")
+
 
 
        
