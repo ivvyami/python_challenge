@@ -13,9 +13,6 @@ changes = []
 #PyBank: analyze records to calculate the following: 
 
 # 1. Total # of months included in the Dataset
-#def PyBank_funct(PyBank_data): 
-
-         #doing it for one and not all of them - str(PyBank_data[0]) 
 
 # 2. Net total amount of "Profit/Losses" over the entire period
    
