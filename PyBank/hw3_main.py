@@ -45,9 +45,3 @@ print(f"Greatest Increase in Profits: {dates[24]} (${str(max(changes))})")
 # 5. the greatest decrease in losses (date and amount) over the entire period
 print(f"Greatest Decrease in Profits: {dates[43]} (${str(min(changes))})")
 
-with open(PyBank_csv, "w", newline="") as datafile:
-    writer = csv.writer(datafile)
-
-    writer.writerow(["Index", "Employee", "Department"])
-
-    #writer.writerows(roster)
